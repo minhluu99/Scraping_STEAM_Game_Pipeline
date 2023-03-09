@@ -1,4 +1,8 @@
+wheel
 BeautifulSoup4
 requests
 pandas
 mysql-connector-python
+apache-airflow-providers-common-sql
+apache-airflow-providers-mysql
+'apache-airflow[virtualenv]' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.5.1/constraints-3.8.txt"

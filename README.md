@@ -5,15 +5,15 @@ This branch will confirguring with docker instead of wsl local
 * The Dockerfile to install environment for image
 * Create directory for saving result and intermediate files
 
-![](output_example\Connect_dir.png)
+![Connect_dir](output_example\Connect_dir.png)
 
 * Add Mysql service to docker-compose.yaml and MySQL connection in airflow UI
 
-![](output_example\MySQL_service.png)
+![MySQL_service](output_example\MySQL_service.png)
 
 * Add environment variables to allow sending email with SMTP
 
-![](output_example\SMTP_environment.png)
+![SMTP_environment](output_example\SMTP_environment.png)
 
 ## Configuring Environment To Run
 

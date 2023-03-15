@@ -1,0 +1,33 @@
+# Scraping_STEAM_Game_Pipeline with Docker
+This branch will confirguring with docker instead of wsl local
+
+## Some detail had been confirguring
+* The Dockerfile to install environment for image
+* Create directory for saving result and intermediate files
+
+![](output_example\Connect_dir.png)
+
+* Add Mysql service to docker-compose.yaml and MySQL connection in airflow UI
+
+![](output_example\MySQL_service.png)
+
+* Add environment variables to allow sending email with SMTP
+
+![](output_example\SMTP_environment.png)
+
+## Configuring Environment To Run
+
+* Step 1: declare SMTP variables likes above
+
+* Step 2: Run command
+```console
+docker compose up -d --build
+```
+
+* Step 3: Open UI Web App : http://localhost:8080/home
+
+* Step 4: Create your new MySQL connection in airflow UI with mysql_conn_id = "Minhluu_local"
+![](output_example\MySQL_connection.png)
+
+It is all step to config
+

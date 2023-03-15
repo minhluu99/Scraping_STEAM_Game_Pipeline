@@ -26,7 +26,14 @@ docker compose up -d --build
 
 * Step 3: Open UI Web App : http://localhost:8080/home
 
-* Step 4: Create your new MySQL connection in airflow UI with mysql_conn_id = "Minhluu_local"
+* Step 4: Create new account in mysql for airflow
+```sql
+CREATE DATABASE airflowdb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'airflow' IDENTIFIED BY 'airflow';
+GRANT ALL PRIVILEGES ON airflowdb.* TO 'airflow';
+```
+
+* Step 5: Create your new MySQL connection in airflow UI with mysql_conn_id = "Minhluu_local"
 ![](output_example\MySQL_connection.png)
 
 It is all step to config

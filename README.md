@@ -5,12 +5,16 @@ I built this project on WSL which stands for Windows Subsystem for Linux and vis
 
 ## Tasks and Results Achieved
 Each tasks of project:
-* get_data : get the html text of 50 games
-* parse : process 50 games to get the information of each game
-* to_csv_file : Save these information to csv file by pandas
+* get_data : get the html block including all information, this task I using request library to get and 
+convert it to beautifulsoup object, then save it by pickle. Why I not pass it to next task by normal with return.
+Because of limit recursion for return, I had chosen to save it with set recursion just in that time.
+So that I can control the recursion that I set. 
+* parse : get the link of pickle file then parse it for each game information. I take as much as I can for further development in future
+* to_csv_file : Using pandas tool to save information in csv file
 * send_email : use STMP gmail to send email if it has saved to csv file
-* Create_db : Create database and table if not exists in mysql
-* to_mysql_insert_file : Create sql file which have insert statement to load data to mysql, if have duplicate id key then update information
+* Create_db : I programmed a SQL file to create database and table, airflow just call it to run
+* to_mysql_insert_file : This step have 2 solution using `load data infile` statement and create sql file to insert data.
+I have trouble with local_infile key, so that I choose the second one. I will fix it in future  
 * Insert_db: Run insert sql file above
 ![DAG tasks workflow gotten in airflow](output_example/airflow_graph.png)
 
